@@ -1,0 +1,31 @@
+print("Please enter your first number: ");
+int n1 = Integer.parseInt(System.console().readLine());
+print("Please enter your second number: ");
+int n2 = Integer.parseInt(System.console().readLine());
+int quotient = 0;
+boolean n1_n = false, n2_n = false;
+if (n1 < 0){
+	n1 = n1 * -1;
+	n1_n = true;
+}
+if (n2 < 0){
+	n2 = n2 * -1;
+	n2_n = true;
+}
+int remainder = n1;
+while (remainder>=n2){
+	remainder = remainder - n2;
+	quotient ++;
+}
+if (n1_n && n2_n){
+	n1 = n1 * -1;
+	n2 = n2 * -1;
+} else if (n1_n && !n2_n){
+	quotient = quotient * -1;
+	n1 = n1 * -1;
+} else if (!n1_n && n2_n){
+	quotient = quotient * -1;
+	n2 = n2 * -1;
+}
+println (n1 + " divided by " + n2 + " is " + quotient + ", remainder " + remainder);
+//Just another test
